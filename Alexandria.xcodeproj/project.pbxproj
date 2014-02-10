@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7B487C2F18A8541A0001F429 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B487C2E18A8541A0001F429 /* MainViewController.m */; };
 		7B5E4D3718A84D3300A1ACF9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B5E4D3618A84D3300A1ACF9 /* Foundation.framework */; };
 		7B5E4D3918A84D3300A1ACF9 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B5E4D3818A84D3300A1ACF9 /* CoreGraphics.framework */; };
 		7B5E4D3B18A84D3300A1ACF9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B5E4D3A18A84D3300A1ACF9 /* UIKit.framework */; };
@@ -33,6 +34,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7B487C2D18A8541A0001F429 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		7B487C2E18A8541A0001F429 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		7B5E4D3318A84D3300A1ACF9 /* Alexandria.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Alexandria.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B5E4D3618A84D3300A1ACF9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		7B5E4D3818A84D3300A1ACF9 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -114,6 +117,8 @@
 				7B5E4D4818A84D3300A1ACF9 /* Images.xcassets */,
 				7B5E4D3D18A84D3300A1ACF9 /* Supporting Files */,
 				7B5E4D6518A84D7100A1ACF9 /* Main.storyboard */,
+				7B487C2D18A8541A0001F429 /* MainViewController.h */,
+				7B487C2E18A8541A0001F429 /* MainViewController.m */,
 			);
 			path = Alexandria;
 			sourceTree = "<group>";
@@ -247,6 +252,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7B5E4D4718A84D3300A1ACF9 /* AppDelegate.m in Sources */,
+				7B487C2F18A8541A0001F429 /* MainViewController.m in Sources */,
 				7B5E4D4318A84D3300A1ACF9 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -452,6 +458,7 @@
 				7B5E4D6118A84D3300A1ACF9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7B5E4D6218A84D3300A1ACF9 /* Build configuration list for PBXNativeTarget "AlexandriaTests" */ = {
 			isa = XCConfigurationList;
@@ -460,6 +467,7 @@
 				7B5E4D6418A84D3300A1ACF9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
