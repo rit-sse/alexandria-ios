@@ -8,8 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
+@class BarcodeScannerViewController;
+
+@protocol BarcodeScannerViewControllerDelegate <NSObject>
+- (void)addBarcodeViewController:(BarcodeScannerViewController *)controller didFinishEnteringBarcode:(NSString *)barcode;
+@end
+
 @interface BarcodeScannerViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UIButton *scanButton;
-
+@property (nonatomic, weak) id <BarcodeScannerViewControllerDelegate> delegate;
 - (IBAction)onScan:(id)sender;
 @end

@@ -16,6 +16,7 @@
 	AVCaptureDeviceInput *input;
 	AVCaptureMetadataOutput *output;
 	AVCaptureVideoPreviewLayer *prevLayer;
+	NSString *detectionString;
 
 	UIView *highlightView;
 }
@@ -42,7 +43,7 @@
     [self.view addSubview:highlightView];
 	
     session = [[AVCaptureSession alloc] init];
-    device = [self frontCamera];
+    device = [AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeVideo];
     NSError *error = nil;
 	
     input = [AVCaptureDeviceInput deviceInputWithDevice:device error:&error];
@@ -96,7 +97,6 @@
 {
     CGRect highlightViewRect = CGRectZero;
     AVMetadataMachineReadableCodeObject *barCodeObject;
-    NSString *detectionString = nil;
     NSArray *barCodeTypes = @[AVMetadataObjectTypeUPCECode, AVMetadataObjectTypeCode39Code, AVMetadataObjectTypeCode39Mod43Code,
 							  AVMetadataObjectTypeEAN13Code, AVMetadataObjectTypeEAN8Code, AVMetadataObjectTypeCode93Code, AVMetadataObjectTypeCode128Code,
 							  AVMetadataObjectTypePDF417Code, AVMetadataObjectTypeQRCode, AVMetadataObjectTypeAztecCode];
@@ -123,6 +123,7 @@
 }
 
 - (IBAction)onScan:(id)sender {
+	[self.delegate addBarcodeViewController:self didFinishEnteringBarcode:detectionString];
 	[self.navigationController popViewControllerAnimated:YES];
 }
 @end

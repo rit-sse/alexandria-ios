@@ -7,8 +7,9 @@
 //
 
 #import "CheckOutViewController.h"
+#import "BarcodeScannerViewController.h"
 
-@interface CheckOutViewController ()
+@interface CheckOutViewController () <BarcodeScannerViewControllerDelegate>
 
 @end
 
@@ -33,6 +34,16 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+	[[segue destinationViewController] setDelegate:self];
+}
+
+- (void)addBarcodeViewController:(BarcodeScannerViewController *)controller didFinishEnteringBarcode:(NSString *)barcode
+{
+	[_scanBookButton setTitle:barcode forState:UIControlStateNormal];
 }
 
 @end

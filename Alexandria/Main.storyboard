@@ -56,6 +56,11 @@
                     <navigationItem key="navigationItem" id="TYu-Vk-fa4">
                         <barButtonItem key="rightBarButtonItem" title="Submit" id="SI5-Z2-AAS"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="scanBookButton" destination="aRq-Vr-wQo" id="a2b-zs-cnS"/>
+                        <outlet property="scanDistributorButton" destination="Loz-k4-XUG" id="6sD-sh-WTI"/>
+                        <outlet property="scanPatronButton" destination="Ogn-rW-n9Q" id="E8I-En-Kc3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="996-27-3WQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

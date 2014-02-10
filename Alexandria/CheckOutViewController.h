@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface CheckOutViewController : UIViewController
-
+@property (weak, nonatomic) IBOutlet UIButton *scanBookButton;
+@property (weak, nonatomic) IBOutlet UIButton *scanPatronButton;
+@property (weak, nonatomic) IBOutlet UIButton *scanDistributorButton;
 @end
