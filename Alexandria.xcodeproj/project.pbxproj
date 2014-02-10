@@ -26,6 +26,7 @@
 		7BFAE6F218A86BA000493F3D /* AddBookViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BFAE6F118A86BA000493F3D /* AddBookViewController.m */; };
 		7BFAE6F518A86BB800493F3D /* ViewBooksViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BFAE6F418A86BB800493F3D /* ViewBooksViewController.m */; };
 		7BFAE6FC18A9220B00493F3D /* BarcodeScannerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BFAE6FB18A9220B00493F3D /* BarcodeScannerViewController.m */; };
+		7BFAE70018A95DE800493F3D /* CheckOut.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BFAE6FF18A95DE800493F3D /* CheckOut.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +69,8 @@
 		7BFAE6F418A86BB800493F3D /* ViewBooksViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewBooksViewController.m; sourceTree = "<group>"; };
 		7BFAE6FA18A9220B00493F3D /* BarcodeScannerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BarcodeScannerViewController.h; sourceTree = "<group>"; };
 		7BFAE6FB18A9220B00493F3D /* BarcodeScannerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BarcodeScannerViewController.m; sourceTree = "<group>"; };
+		7BFAE6FE18A95DE800493F3D /* CheckOut.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CheckOut.h; sourceTree = "<group>"; };
+		7BFAE6FF18A95DE800493F3D /* CheckOut.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckOut.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -189,6 +192,8 @@
 		7BFAE6FD18A95C9800493F3D /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				7BFAE6FE18A95DE800493F3D /* CheckOut.h */,
+				7BFAE6FF18A95DE800493F3D /* CheckOut.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -292,6 +297,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7BFAE70018A95DE800493F3D /* CheckOut.m in Sources */,
 				7B487C3518A8646D0001F429 /* CheckOutViewController.m in Sources */,
 				7BFAE6EC18A86B4500493F3D /* CheckInViewController.m in Sources */,
 				7BFAE6FC18A9220B00493F3D /* BarcodeScannerViewController.m in Sources */,
