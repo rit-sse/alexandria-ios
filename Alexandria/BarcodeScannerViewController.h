@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface BarcodeScannerViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UIButton *scanButton;
 
+- (IBAction)onScan:(id)sender;
 @end

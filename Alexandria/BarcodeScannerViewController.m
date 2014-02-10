@@ -42,7 +42,7 @@
     [self.view addSubview:highlightView];
 	
     session = [[AVCaptureSession alloc] init];
-    device = [AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeVideo];
+    device = [self frontCamera];
     NSError *error = nil;
 	
     input = [AVCaptureDeviceInput deviceInputWithDevice:device error:&error];
@@ -68,6 +68,7 @@
     [session startRunning];
 	
     [self.view bringSubviewToFront:highlightView];
+	[self.view bringSubviewToFront:_scanButton];
 }
 
 -(void) viewDidAppear:(BOOL)animated
@@ -81,6 +82,15 @@
 		[previewLayerConnection setVideoOrientation:[[UIApplication sharedApplication] statusBarOrientation]];
 }
 
+- (AVCaptureDevice *)frontCamera {
+    NSArray *devices = [AVCaptureDevice devicesWithMediaType:AVMediaTypeVideo];
+    for (AVCaptureDevice *device in devices) {
+        if ([device position] == AVCaptureDevicePositionFront) {
+            return device;
+        }
+    }
+    return nil;
+}
 
 - (void)captureOutput:(AVCaptureOutput *)captureOutput didOutputMetadataObjects:(NSArray *)metadataObjects fromConnection:(AVCaptureConnection *)connection
 {
@@ -112,4 +122,7 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)onScan:(id)sender {
+	[self.navigationController popViewControllerAnimated:YES];
+}
 @end
