@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		7B487C2F18A8541A0001F429 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B487C2E18A8541A0001F429 /* MainViewController.m */; };
+		7B487C3518A8646D0001F429 /* CheckOutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B487C3418A8646D0001F429 /* CheckOutViewController.m */; };
 		7B5E4D3718A84D3300A1ACF9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B5E4D3618A84D3300A1ACF9 /* Foundation.framework */; };
 		7B5E4D3918A84D3300A1ACF9 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B5E4D3818A84D3300A1ACF9 /* CoreGraphics.framework */; };
 		7B5E4D3B18A84D3300A1ACF9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B5E4D3A18A84D3300A1ACF9 /* UIKit.framework */; };
@@ -21,6 +22,9 @@
 		7B5E4D5A18A84D3300A1ACF9 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7B5E4D5818A84D3300A1ACF9 /* InfoPlist.strings */; };
 		7B5E4D5C18A84D3300A1ACF9 /* AlexandriaTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B5E4D5B18A84D3300A1ACF9 /* AlexandriaTests.m */; };
 		7B5E4D6618A84D7100A1ACF9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B5E4D6518A84D7100A1ACF9 /* Main.storyboard */; };
+		7BFAE6EC18A86B4500493F3D /* CheckInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BFAE6EB18A86B4500493F3D /* CheckInViewController.m */; };
+		7BFAE6F218A86BA000493F3D /* AddBookViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BFAE6F118A86BA000493F3D /* AddBookViewController.m */; };
+		7BFAE6F518A86BB800493F3D /* ViewBooksViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BFAE6F418A86BB800493F3D /* ViewBooksViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +40,8 @@
 /* Begin PBXFileReference section */
 		7B487C2D18A8541A0001F429 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		7B487C2E18A8541A0001F429 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		7B487C3318A8646D0001F429 /* CheckOutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CheckOutViewController.h; sourceTree = "<group>"; };
+		7B487C3418A8646D0001F429 /* CheckOutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckOutViewController.m; sourceTree = "<group>"; };
 		7B5E4D3318A84D3300A1ACF9 /* Alexandria.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Alexandria.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B5E4D3618A84D3300A1ACF9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		7B5E4D3818A84D3300A1ACF9 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -53,6 +59,12 @@
 		7B5E4D5918A84D3300A1ACF9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		7B5E4D5B18A84D3300A1ACF9 /* AlexandriaTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AlexandriaTests.m; sourceTree = "<group>"; };
 		7B5E4D6518A84D7100A1ACF9 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		7BFAE6EA18A86B4500493F3D /* CheckInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CheckInViewController.h; sourceTree = "<group>"; };
+		7BFAE6EB18A86B4500493F3D /* CheckInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckInViewController.m; sourceTree = "<group>"; };
+		7BFAE6F018A86BA000493F3D /* AddBookViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddBookViewController.h; sourceTree = "<group>"; };
+		7BFAE6F118A86BA000493F3D /* AddBookViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddBookViewController.m; sourceTree = "<group>"; };
+		7BFAE6F318A86BB800493F3D /* ViewBooksViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewBooksViewController.h; sourceTree = "<group>"; };
+		7BFAE6F418A86BB800493F3D /* ViewBooksViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewBooksViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,7 +95,6 @@
 			isa = PBXGroup;
 			children = (
 				7B5E4D3C18A84D3300A1ACF9 /* Alexandria */,
-				7B5E4D5518A84D3300A1ACF9 /* AlexandriaTests */,
 				7B5E4D3518A84D3300A1ACF9 /* Frameworks */,
 				7B5E4D3418A84D3300A1ACF9 /* Products */,
 			);
@@ -112,13 +123,22 @@
 		7B5E4D3C18A84D3300A1ACF9 /* Alexandria */ = {
 			isa = PBXGroup;
 			children = (
+				7BFAE6F318A86BB800493F3D /* ViewBooksViewController.h */,
+				7BFAE6F418A86BB800493F3D /* ViewBooksViewController.m */,
+				7BFAE6EA18A86B4500493F3D /* CheckInViewController.h */,
+				7BFAE6EB18A86B4500493F3D /* CheckInViewController.m */,
+				7B487C3318A8646D0001F429 /* CheckOutViewController.h */,
+				7B487C3418A8646D0001F429 /* CheckOutViewController.m */,
 				7B5E4D4518A84D3300A1ACF9 /* AppDelegate.h */,
 				7B5E4D4618A84D3300A1ACF9 /* AppDelegate.m */,
 				7B5E4D4818A84D3300A1ACF9 /* Images.xcassets */,
 				7B5E4D3D18A84D3300A1ACF9 /* Supporting Files */,
 				7B5E4D6518A84D7100A1ACF9 /* Main.storyboard */,
+				7BFAE6F018A86BA000493F3D /* AddBookViewController.h */,
+				7BFAE6F118A86BA000493F3D /* AddBookViewController.m */,
 				7B487C2D18A8541A0001F429 /* MainViewController.h */,
 				7B487C2E18A8541A0001F429 /* MainViewController.m */,
+				7B5E4D5518A84D3300A1ACF9 /* AlexandriaTests */,
 			);
 			path = Alexandria;
 			sourceTree = "<group>";
@@ -141,7 +161,7 @@
 				7B5E4D5618A84D3300A1ACF9 /* Supporting Files */,
 			);
 			path = AlexandriaTests;
-			sourceTree = "<group>";
+			sourceTree = SOURCE_ROOT;
 		};
 		7B5E4D5618A84D3300A1ACF9 /* Supporting Files */ = {
 			isa = PBXGroup;
@@ -251,9 +271,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7B487C3518A8646D0001F429 /* CheckOutViewController.m in Sources */,
+				7BFAE6EC18A86B4500493F3D /* CheckInViewController.m in Sources */,
 				7B5E4D4718A84D3300A1ACF9 /* AppDelegate.m in Sources */,
 				7B487C2F18A8541A0001F429 /* MainViewController.m in Sources */,
+				7BFAE6F218A86BA000493F3D /* AddBookViewController.m in Sources */,
 				7B5E4D4318A84D3300A1ACF9 /* main.m in Sources */,
+				7BFAE6F518A86BB800493F3D /* ViewBooksViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
