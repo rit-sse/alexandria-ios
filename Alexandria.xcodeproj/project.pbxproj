@@ -25,6 +25,7 @@
 		7BFAE6EC18A86B4500493F3D /* CheckInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BFAE6EB18A86B4500493F3D /* CheckInViewController.m */; };
 		7BFAE6F218A86BA000493F3D /* AddBookViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BFAE6F118A86BA000493F3D /* AddBookViewController.m */; };
 		7BFAE6F518A86BB800493F3D /* ViewBooksViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BFAE6F418A86BB800493F3D /* ViewBooksViewController.m */; };
+		7BFAE6FC18A9220B00493F3D /* BarcodeScannerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BFAE6FB18A9220B00493F3D /* BarcodeScannerViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +66,8 @@
 		7BFAE6F118A86BA000493F3D /* AddBookViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddBookViewController.m; sourceTree = "<group>"; };
 		7BFAE6F318A86BB800493F3D /* ViewBooksViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewBooksViewController.h; sourceTree = "<group>"; };
 		7BFAE6F418A86BB800493F3D /* ViewBooksViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewBooksViewController.m; sourceTree = "<group>"; };
+		7BFAE6FA18A9220B00493F3D /* BarcodeScannerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BarcodeScannerViewController.h; sourceTree = "<group>"; };
+		7BFAE6FB18A9220B00493F3D /* BarcodeScannerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BarcodeScannerViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,21 +126,12 @@
 		7B5E4D3C18A84D3300A1ACF9 /* Alexandria */ = {
 			isa = PBXGroup;
 			children = (
-				7BFAE6F318A86BB800493F3D /* ViewBooksViewController.h */,
-				7BFAE6F418A86BB800493F3D /* ViewBooksViewController.m */,
-				7BFAE6EA18A86B4500493F3D /* CheckInViewController.h */,
-				7BFAE6EB18A86B4500493F3D /* CheckInViewController.m */,
-				7B487C3318A8646D0001F429 /* CheckOutViewController.h */,
-				7B487C3418A8646D0001F429 /* CheckOutViewController.m */,
+				7BFAE6F918A921B600493F3D /* Controller */,
 				7B5E4D4518A84D3300A1ACF9 /* AppDelegate.h */,
 				7B5E4D4618A84D3300A1ACF9 /* AppDelegate.m */,
 				7B5E4D6518A84D7100A1ACF9 /* Main.storyboard */,
 				7B5E4D4818A84D3300A1ACF9 /* Images.xcassets */,
 				7B5E4D3D18A84D3300A1ACF9 /* Supporting Files */,
-				7BFAE6F018A86BA000493F3D /* AddBookViewController.h */,
-				7BFAE6F118A86BA000493F3D /* AddBookViewController.m */,
-				7B487C2D18A8541A0001F429 /* MainViewController.h */,
-				7B487C2E18A8541A0001F429 /* MainViewController.m */,
 				7B5E4D5518A84D3300A1ACF9 /* AlexandriaTests */,
 			);
 			path = Alexandria;
@@ -170,6 +164,25 @@
 				7B5E4D5818A84D3300A1ACF9 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		7BFAE6F918A921B600493F3D /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				7BFAE6F018A86BA000493F3D /* AddBookViewController.h */,
+				7BFAE6F118A86BA000493F3D /* AddBookViewController.m */,
+				7B487C2D18A8541A0001F429 /* MainViewController.h */,
+				7B487C2E18A8541A0001F429 /* MainViewController.m */,
+				7BFAE6F318A86BB800493F3D /* ViewBooksViewController.h */,
+				7BFAE6F418A86BB800493F3D /* ViewBooksViewController.m */,
+				7BFAE6EA18A86B4500493F3D /* CheckInViewController.h */,
+				7BFAE6EB18A86B4500493F3D /* CheckInViewController.m */,
+				7B487C3318A8646D0001F429 /* CheckOutViewController.h */,
+				7B487C3418A8646D0001F429 /* CheckOutViewController.m */,
+				7BFAE6FA18A9220B00493F3D /* BarcodeScannerViewController.h */,
+				7BFAE6FB18A9220B00493F3D /* BarcodeScannerViewController.m */,
+			);
+			name = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -273,6 +286,7 @@
 			files = (
 				7B487C3518A8646D0001F429 /* CheckOutViewController.m in Sources */,
 				7BFAE6EC18A86B4500493F3D /* CheckInViewController.m in Sources */,
+				7BFAE6FC18A9220B00493F3D /* BarcodeScannerViewController.m in Sources */,
 				7B5E4D4718A84D3300A1ACF9 /* AppDelegate.m in Sources */,
 				7B487C2F18A8541A0001F429 /* MainViewController.m in Sources */,
 				7BFAE6F218A86BA000493F3D /* AddBookViewController.m in Sources */,
