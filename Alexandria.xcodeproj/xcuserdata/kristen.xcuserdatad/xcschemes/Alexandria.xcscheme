@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "7B76FBD218A83FDD0061D9A3"
+               BlueprintIdentifier = "7B5E4D3218A84D3300A1ACF9"
                BuildableName = "Alexandria.app"
                BlueprintName = "Alexandria"
                ReferencedContainer = "container:Alexandria.xcodeproj">
@@ -32,7 +32,7 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "7B76FBF918A83FDE0061D9A3"
+               BlueprintIdentifier = "7B5E4D4D18A84D3300A1ACF9"
                BuildableName = "AlexandriaTests.xctest"
                BlueprintName = "AlexandriaTests"
                ReferencedContainer = "container:Alexandria.xcodeproj">
@@ -42,7 +42,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "7B76FBD218A83FDD0061D9A3"
+            BlueprintIdentifier = "7B5E4D3218A84D3300A1ACF9"
             BuildableName = "Alexandria.app"
             BlueprintName = "Alexandria"
             ReferencedContainer = "container:Alexandria.xcodeproj">
@@ -61,7 +61,7 @@
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "7B76FBD218A83FDD0061D9A3"
+            BlueprintIdentifier = "7B5E4D3218A84D3300A1ACF9"
             BuildableName = "Alexandria.app"
             BlueprintName = "Alexandria"
             ReferencedContainer = "container:Alexandria.xcodeproj">
@@ -79,7 +79,7 @@
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "7B76FBD218A83FDD0061D9A3"
+            BlueprintIdentifier = "7B5E4D3218A84D3300A1ACF9"
             BuildableName = "Alexandria.app"
             BlueprintName = "Alexandria"
             ReferencedContainer = "container:Alexandria.xcodeproj">
