@@ -123,7 +123,7 @@
 }
 
 - (IBAction)onScan:(id)sender {
-	[self.delegate addBarcodeViewController:self didFinishEnteringBarcode:detectionString];
+	[self.delegate addBarcodeViewController:self didFinishEnteringBarcode:detectionString forButton:_identifier];
 	[self.navigationController popViewControllerAnimated:YES];
 }
 @end

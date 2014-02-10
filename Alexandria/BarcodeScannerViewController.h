@@ -11,11 +11,12 @@
 @class BarcodeScannerViewController;
 
 @protocol BarcodeScannerViewControllerDelegate <NSObject>
-- (void)addBarcodeViewController:(BarcodeScannerViewController *)controller didFinishEnteringBarcode:(NSString *)barcode;
+- (void)addBarcodeViewController:(BarcodeScannerViewController *)controller didFinishEnteringBarcode:(NSString *)barcode forButton:(NSString *)button;
 @end
 
 @interface BarcodeScannerViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UIButton *scanButton;
 @property (nonatomic, weak) id <BarcodeScannerViewControllerDelegate> delegate;
+@property (nonatomic, strong) NSString* identifier;
 - (IBAction)onScan:(id)sender;
 @end

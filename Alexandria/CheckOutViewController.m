@@ -38,12 +38,20 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
+        BarcodeScannerViewController *controller = (BarcodeScannerViewController *)segue.destinationViewController;
+        controller.identifier = segue.identifier;
 	[[segue destinationViewController] setDelegate:self];
 }
 
-- (void)addBarcodeViewController:(BarcodeScannerViewController *)controller didFinishEnteringBarcode:(NSString *)barcode
+- (void)addBarcodeViewController:(BarcodeScannerViewController *)controller didFinishEnteringBarcode:(NSString *)barcode forButton:(NSString *)identifier
 {
-	[_scanBookButton setTitle:barcode forState:UIControlStateNormal];
+	if([identifier isEqualToString:@"book"]){
+		[_scanBookButton setTitle:barcode forState:UIControlStateNormal];
+	}else if([identifier isEqualToString:@"distributor"]){
+		[_scanDistributorButton setTitle:barcode forState:UIControlStateNormal];
+	}else if([identifier isEqualToString:@"patron"]){
+		[_scanPatronButton setTitle:barcode forState:UIControlStateNormal];
+	}
 }
 
 @end
