@@ -126,6 +126,7 @@
 		7B5E4D3C18A84D3300A1ACF9 /* Alexandria */ = {
 			isa = PBXGroup;
 			children = (
+				7BFAE6FD18A95C9800493F3D /* Models */,
 				7BFAE6F918A921B600493F3D /* Controllers */,
 				7B5E4D4518A84D3300A1ACF9 /* AppDelegate.h */,
 				7B5E4D4618A84D3300A1ACF9 /* AppDelegate.m */,
@@ -182,7 +183,14 @@
 				7BFAE6FA18A9220B00493F3D /* BarcodeScannerViewController.h */,
 				7BFAE6FB18A9220B00493F3D /* BarcodeScannerViewController.m */,
 			);
-			name = Controllers;
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		7BFAE6FD18A95C9800493F3D /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

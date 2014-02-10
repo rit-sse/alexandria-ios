@@ -11,14 +11,14 @@
 
 @interface BarcodeScannerViewController () <AVCaptureMetadataOutputObjectsDelegate>
 {
-	AVCaptureSession *session;
-	AVCaptureDevice *device;
-	AVCaptureDeviceInput *input;
-	AVCaptureMetadataOutput *output;
-	AVCaptureVideoPreviewLayer *prevLayer;
-	NSString *detectionString;
+	AVCaptureSession *_session;
+	AVCaptureDevice *_device;
+	AVCaptureDeviceInput *_input;
+	AVCaptureMetadataOutput *_output;
+	AVCaptureVideoPreviewLayer *_prevLayer;
+	NSString *_detectionString;
 
-	UIView *highlightView;
+	UIView *_highlightView;
 }
 @end
 
@@ -36,39 +36,39 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	highlightView = [[UIView alloc] init];
-    highlightView.autoresizingMask = UIViewAutoresizingFlexibleTopMargin|UIViewAutoresizingFlexibleLeftMargin|UIViewAutoresizingFlexibleRightMargin|UIViewAutoresizingFlexibleBottomMargin;
-	highlightView.layer.borderColor = [UIColor greenColor].CGColor;
-    highlightView.layer.borderWidth = 3;
-    [self.view addSubview:highlightView];
+	_highlightView = [[UIView alloc] init];
+    _highlightView.autoresizingMask = UIViewAutoresizingFlexibleTopMargin|UIViewAutoresizingFlexibleLeftMargin|UIViewAutoresizingFlexibleRightMargin|UIViewAutoresizingFlexibleBottomMargin;
+	_highlightView.layer.borderColor = [UIColor greenColor].CGColor;
+    _highlightView.layer.borderWidth = 3;
+    [self.view addSubview:_highlightView];
 	
-    session = [[AVCaptureSession alloc] init];
-    device = [AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeVideo];
+    _session = [[AVCaptureSession alloc] init];
+    _device = [AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeVideo];
     NSError *error = nil;
 	
-    input = [AVCaptureDeviceInput deviceInputWithDevice:device error:&error];
-    if (input) {
-        [session addInput:input];
+    _input = [AVCaptureDeviceInput deviceInputWithDevice:_device error:&error];
+    if (_input) {
+        [_session addInput:_input];
     } else {
         NSLog(@"Error: %@", error);
     }
 	
-    output = [[AVCaptureMetadataOutput alloc] init];
-    [output setMetadataObjectsDelegate:self queue:dispatch_get_main_queue()];
-    [session addOutput:output];
+    _output = [[AVCaptureMetadataOutput alloc] init];
+    [_output setMetadataObjectsDelegate:self queue:dispatch_get_main_queue()];
+    [_session addOutput:_output];
 	
-    output.metadataObjectTypes = [output availableMetadataObjectTypes];
+    _output.metadataObjectTypes = [_output availableMetadataObjectTypes];
 	
-    prevLayer = [AVCaptureVideoPreviewLayer layerWithSession:session];
+    _prevLayer = [AVCaptureVideoPreviewLayer layerWithSession:_session];
 	CGRect r = self.view.bounds;
-	prevLayer.frame = CGRectMake(r.origin.x, r.origin.y, r.size.height, r.size.width);
+	_prevLayer.frame = CGRectMake(r.origin.x, r.origin.y, r.size.height, r.size.width);
 	
-    prevLayer.videoGravity = AVLayerVideoGravityResizeAspectFill;
-    [self.view.layer addSublayer:prevLayer];
+    _prevLayer.videoGravity = AVLayerVideoGravityResizeAspectFill;
+    [self.view.layer addSublayer:_prevLayer];
 	
-    [session startRunning];
+    [_session startRunning];
 	
-    [self.view bringSubviewToFront:highlightView];
+    [self.view bringSubviewToFront:_highlightView];
 	[self.view bringSubviewToFront:_scanButton];
 }
 
@@ -77,7 +77,7 @@
 	[super viewDidAppear:YES];
 	
 	//Get Preview Layer connection
-	AVCaptureConnection *previewLayerConnection=prevLayer.connection;
+	AVCaptureConnection *previewLayerConnection=_prevLayer.connection;
 	
 	if ([previewLayerConnection isVideoOrientationSupported])
 		[previewLayerConnection setVideoOrientation:[[UIApplication sharedApplication] statusBarOrientation]];
@@ -105,15 +105,15 @@
         for (NSString *type in barCodeTypes) {
             if ([metadata.type isEqualToString:type])
             {
-                barCodeObject = (AVMetadataMachineReadableCodeObject *)[prevLayer transformedMetadataObjectForMetadataObject:(AVMetadataMachineReadableCodeObject *)metadata];
+                barCodeObject = (AVMetadataMachineReadableCodeObject *)[_prevLayer transformedMetadataObjectForMetadataObject:(AVMetadataMachineReadableCodeObject *)metadata];
                 highlightViewRect = barCodeObject.bounds;
-                detectionString = [(AVMetadataMachineReadableCodeObject *)metadata stringValue];
+                _detectionString = [(AVMetadataMachineReadableCodeObject *)metadata stringValue];
                 break;
             }
         }
     }
 	
-    highlightView.frame = highlightViewRect;
+    _highlightView.frame = highlightViewRect;
 }
 
 - (void)didReceiveMemoryWarning
@@ -123,7 +123,7 @@
 }
 
 - (IBAction)onScan:(id)sender {
-	[self.delegate addBarcodeViewController:self didFinishEnteringBarcode:detectionString forButton:_identifier];
+	[self.delegate addBarcodeViewController:self didFinishEnteringBarcode:_detectionString forButton:_identifier];
 	[self.navigationController popViewControllerAnimated:YES];
 }
 @end
