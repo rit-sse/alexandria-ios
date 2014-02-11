@@ -55,6 +55,13 @@
                                     <segue destination="6Wx-Hx-rZk" kind="push" identifier="patron" id="rIC-gU-Q2Y"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fje-Vs-4UB">
+                                <rect key="frame" x="0.0" y="102" width="1024" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="30"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
@@ -66,6 +73,7 @@
                         <outlet property="scanBookButton" destination="aRq-Vr-wQo" id="a2b-zs-cnS"/>
                         <outlet property="scanDistributorButton" destination="Loz-k4-XUG" id="6sD-sh-WTI"/>
                         <outlet property="scanPatronButton" destination="Ogn-rW-n9Q" id="E8I-En-Kc3"/>
+                        <outlet property="statusLabel" destination="Fje-Vs-4UB" id="Fgy-2w-Axn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="996-27-3WQ" userLabel="First Responder" sceneMemberID="firstResponder"/>

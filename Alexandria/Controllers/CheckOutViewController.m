@@ -27,6 +27,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+	_checkOut = [[CheckOut alloc] init];
 	// Do any additional setup after loading the view.
 }
 
@@ -38,19 +39,33 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-        BarcodeScannerViewController *controller = (BarcodeScannerViewController *)segue.destinationViewController;
-        controller.identifier = segue.identifier;
+	BarcodeScannerViewController *controller = (BarcodeScannerViewController *)segue.destinationViewController;
+	controller.identifier = segue.identifier;
 	[[segue destinationViewController] setDelegate:self];
 }
 
 - (void)addBarcodeViewController:(BarcodeScannerViewController *)controller didFinishEnteringBarcode:(NSString *)barcode forButton:(NSString *)identifier
 {
-	if([identifier isEqualToString:@"book"]){
-		[_scanBookButton setTitle:barcode forState:UIControlStateNormal];
-	}else if([identifier isEqualToString:@"distributor"]){
-		[_scanDistributorButton setTitle:barcode forState:UIControlStateNormal];
-	}else if([identifier isEqualToString:@"patron"]){
-		[_scanPatronButton setTitle:barcode forState:UIControlStateNormal];
+	if(barcode == nil) {
+		[_statusLabel setTextColor:[UIColor redColor]];
+		[_statusLabel setText:@"Invalid Barcode"];
+	} else {
+		[_statusLabel setTextColor:[UIColor greenColor]];
+		[_statusLabel setText:@"Successfullly Scanned!"];
+		if([identifier isEqualToString:@"book"]) {
+			_checkOut.bookBarcode = barcode;
+			[_scanBookButton setTitle:_checkOut.bookBarcode forState:UIControlStateNormal];
+			[_scanBookButton setBackgroundColor:[UIColor greenColor]];
+		} else if([identifier isEqualToString:@"distributor"]) {
+			_checkOut.distributorBarcode = barcode;
+			if([barcode isEqualToString:@""])
+			[_scanDistributorButton setTitle:@"Distributor Scanned!" forState:UIControlStateNormal];
+			[_scanDistributorButton setBackgroundColor:[UIColor greenColor]];
+		} else if([identifier isEqualToString:@"patron"]) {
+			_checkOut.patronBarcode = barcode;
+			[_scanPatronButton setTitle:@"Patron Scanned!" forState:UIControlStateNormal];
+			[_scanPatronButton setBackgroundColor:[UIColor greenColor]];
+		}
 	}
 }
 

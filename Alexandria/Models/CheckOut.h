@@ -9,5 +9,8 @@
 #import <Foundation/Foundation.h>
 
 @interface CheckOut : NSObject
+@property (strong, nonatomic) NSString* bookBarcode;
+@property (strong, nonatomic) NSString* patronBarcode;
+@property (strong, nonatomic) NSString* distributorBarcode;
 
 @end
