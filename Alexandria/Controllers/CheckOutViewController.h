@@ -7,13 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "CheckOut.h"
+#import "Colours.h"
 
 @interface CheckOutViewController : UIViewController
-@property (weak, nonatomic) IBOutlet UIButton *scanBookButton;
-@property (weak, nonatomic) IBOutlet UIButton *scanPatronButton;
-@property (weak, nonatomic) IBOutlet UIButton *scanDistributorButton;
-@property (strong, nonatomic) CheckOut* checkOut;
+@property (weak, nonatomic) IBOutlet UITextField *patronField;
+@property (weak, nonatomic) IBOutlet UITextField *isbnField;
+@property (weak, nonatomic) IBOutlet UITextField *distributorField;
 @property (weak, nonatomic) IBOutlet UILabel *statusLabel;
 - (IBAction)submitCheckOut:(id)sender;
 @end

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1143F2443E574F87AAE48D72 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 062AAD327D1A47319A2BA2F4 /* libPods.a */; };
 		7B487C2F18A8541A0001F429 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B487C2E18A8541A0001F429 /* MainViewController.m */; };
 		7B487C3518A8646D0001F429 /* CheckOutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B487C3418A8646D0001F429 /* CheckOutViewController.m */; };
 		7B5E4D3718A84D3300A1ACF9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B5E4D3618A84D3300A1ACF9 /* Foundation.framework */; };
@@ -26,7 +27,6 @@
 		7BFAE6F218A86BA000493F3D /* AddBookViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BFAE6F118A86BA000493F3D /* AddBookViewController.m */; };
 		7BFAE6F518A86BB800493F3D /* ViewBooksViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BFAE6F418A86BB800493F3D /* ViewBooksViewController.m */; };
 		7BFAE6FC18A9220B00493F3D /* BarcodeScannerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BFAE6FB18A9220B00493F3D /* BarcodeScannerViewController.m */; };
-		7BFAE70018A95DE800493F3D /* CheckOut.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BFAE6FF18A95DE800493F3D /* CheckOut.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +40,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		062AAD327D1A47319A2BA2F4 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		2B9FF73300AE4C36A03857B9 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		7B487C2D18A8541A0001F429 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		7B487C2E18A8541A0001F429 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		7B487C3318A8646D0001F429 /* CheckOutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CheckOutViewController.h; sourceTree = "<group>"; };
@@ -69,8 +71,6 @@
 		7BFAE6F418A86BB800493F3D /* ViewBooksViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewBooksViewController.m; sourceTree = "<group>"; };
 		7BFAE6FA18A9220B00493F3D /* BarcodeScannerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BarcodeScannerViewController.h; sourceTree = "<group>"; };
 		7BFAE6FB18A9220B00493F3D /* BarcodeScannerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BarcodeScannerViewController.m; sourceTree = "<group>"; };
-		7BFAE6FE18A95DE800493F3D /* CheckOut.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CheckOut.h; sourceTree = "<group>"; };
-		7BFAE6FF18A95DE800493F3D /* CheckOut.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckOut.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +81,7 @@
 				7B5E4D3918A84D3300A1ACF9 /* CoreGraphics.framework in Frameworks */,
 				7B5E4D3B18A84D3300A1ACF9 /* UIKit.framework in Frameworks */,
 				7B5E4D3718A84D3300A1ACF9 /* Foundation.framework in Frameworks */,
+				1143F2443E574F87AAE48D72 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -103,6 +104,7 @@
 				7B5E4D3C18A84D3300A1ACF9 /* Alexandria */,
 				7B5E4D3518A84D3300A1ACF9 /* Frameworks */,
 				7B5E4D3418A84D3300A1ACF9 /* Products */,
+				2B9FF73300AE4C36A03857B9 /* Pods.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -122,6 +124,7 @@
 				7B5E4D3818A84D3300A1ACF9 /* CoreGraphics.framework */,
 				7B5E4D3A18A84D3300A1ACF9 /* UIKit.framework */,
 				7B5E4D4F18A84D3300A1ACF9 /* XCTest.framework */,
+				062AAD327D1A47319A2BA2F4 /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -129,7 +132,6 @@
 		7B5E4D3C18A84D3300A1ACF9 /* Alexandria */ = {
 			isa = PBXGroup;
 			children = (
-				7BFAE6FD18A95C9800493F3D /* Models */,
 				7BFAE6F918A921B600493F3D /* Controllers */,
 				7B5E4D4518A84D3300A1ACF9 /* AppDelegate.h */,
 				7B5E4D4618A84D3300A1ACF9 /* AppDelegate.m */,
@@ -189,15 +191,6 @@
 			path = Controllers;
 			sourceTree = "<group>";
 		};
-		7BFAE6FD18A95C9800493F3D /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				7BFAE6FE18A95DE800493F3D /* CheckOut.h */,
-				7BFAE6FF18A95DE800493F3D /* CheckOut.m */,
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -205,9 +198,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7B5E4D5F18A84D3300A1ACF9 /* Build configuration list for PBXNativeTarget "Alexandria" */;
 			buildPhases = (
+				A4669AEED2FD446A83A48AEF /* Check Pods Manifest.lock */,
 				7B5E4D2F18A84D3300A1ACF9 /* Sources */,
 				7B5E4D3018A84D3300A1ACF9 /* Frameworks */,
 				7B5E4D3118A84D3300A1ACF9 /* Resources */,
+				10F242B7C3514489B4163091 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -292,12 +287,44 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		10F242B7C3514489B4163091 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A4669AEED2FD446A83A48AEF /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		7B5E4D2F18A84D3300A1ACF9 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7BFAE70018A95DE800493F3D /* CheckOut.m in Sources */,
 				7B487C3518A8646D0001F429 /* CheckOutViewController.m in Sources */,
 				7BFAE6EC18A86B4500493F3D /* CheckInViewController.m in Sources */,
 				7BFAE6FC18A9220B00493F3D /* BarcodeScannerViewController.m in Sources */,
@@ -423,6 +450,7 @@
 		};
 		7B5E4D6018A84D3300A1ACF9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2B9FF73300AE4C36A03857B9 /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -437,6 +465,7 @@
 		};
 		7B5E4D6118A84D3300A1ACF9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2B9FF73300AE4C36A03857B9 /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;

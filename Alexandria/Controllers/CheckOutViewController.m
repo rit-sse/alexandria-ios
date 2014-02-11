@@ -27,7 +27,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	_checkOut = [[CheckOut alloc] init];
 	// Do any additional setup after loading the view.
 }
 
@@ -47,33 +46,69 @@
 - (void)addBarcodeViewController:(BarcodeScannerViewController *)controller didFinishEnteringBarcode:(NSString *)barcode forButton:(NSString *)identifier
 {
 	if(barcode == nil) {
-		[_statusLabel setTextColor:[UIColor redColor]];
+		[_statusLabel setTextColor:[UIColor grapefruitColor]];
 		[_statusLabel setText:@"Invalid Barcode"];
 	} else {
 		[_statusLabel setTextColor:[UIColor greenColor]];
 		[_statusLabel setText:@"Successfully Scanned!"];
 		if([identifier isEqualToString:@"book"]) {
-			_checkOut.bookBarcode = barcode;
-			[_scanBookButton setTitle:_checkOut.bookBarcode forState:UIControlStateNormal];
-			[_scanBookButton setBackgroundColor:[UIColor greenColor]];
+			[_isbnField setText:barcode];
 		} else if([identifier isEqualToString:@"distributor"]) {
-			_checkOut.distributorBarcode = barcode;
-			[_scanDistributorButton setTitle:@"Distributor Scanned!" forState:UIControlStateNormal];
-			[_scanDistributorButton setBackgroundColor:[UIColor greenColor]];
+			[_distributorField setText:barcode];
 		} else if([identifier isEqualToString:@"patron"]) {
-			_checkOut.patronBarcode = barcode;
-			[_scanPatronButton setTitle:@"Patron Scanned!" forState:UIControlStateNormal];
-			[_scanPatronButton setBackgroundColor:[UIColor greenColor]];
+			[_patronField setText:barcode];
 		}
 	}
 }
 
 - (IBAction)submitCheckOut:(id)sender {
 	[_statusLabel setTextColor:[UIColor blackColor]];
-	[_statusLabel setText:@"Attempting Check Out"];
+	[_statusLabel setText:@"Attempting Check Out..."];
 	NSURLResponse *response = nil;
 	NSError *error = nil;
-	NSData *data = [_checkOut checkOutBookWithResponse:&response error:&error];
-	NSString *dataString = [[NSString alloc] initWithData:data encoding:NSASCIIStringEncoding];
+	
+	NSURL *URL = [NSURL URLWithString:@"http://alexandria.ad.sofse.org:8080/checkouts.json"];
+	NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:URL];
+	// Set request type
+	request.HTTPMethod = @"POST";
+	
+	// Set params to be sent to the server
+	NSString *params = [NSString stringWithFormat:@"isbn=%@&patron_barcode=%@&distributor_barcode=%@", _isbnField.text, _patronField.text, _distributorField.text];
+	// Encoding type
+	NSData *data = [params dataUsingEncoding:NSUTF8StringEncoding];
+	// Add values and contenttype to the http header
+	[request addValue:@"8bit" forHTTPHeaderField:@"Content-Transfer-Encoding"];
+	[request addValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
+	[request addValue:[NSString stringWithFormat:@"%lu", (unsigned long)[data length]] forHTTPHeaderField:@"Content-Length"];
+	[request setHTTPBody:data];
+	
+	NSData *responseData = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
+
+	NSString *dataString = [[NSString alloc] initWithData:responseData encoding:NSASCIIStringEncoding];
+	if(error != nil){
+		NSString *message = [error localizedDescription];
+		[_statusLabel setTextColor:[UIColor grapefruitColor]];
+		[_statusLabel setText:[NSString stringWithFormat:@"Error: %@", message]];
+	}else{
+		NSError *e;
+		NSDictionary *json =[NSJSONSerialization JSONObjectWithData: [dataString dataUsingEncoding:NSUTF8StringEncoding]
+										options: NSJSONReadingMutableContainers
+										  error: &e];
+		NSInteger status = [(NSHTTPURLResponse*)response statusCode];
+		if(status == 201){
+			[_statusLabel setTextColor:[UIColor cardTableColor]];
+			[_statusLabel setText:[NSString stringWithFormat:@"You've successfully checked out the book %@!", [json valueForKey:@"title"]]];
+		}else {
+			[_statusLabel setTextColor:[UIColor grapefruitColor]];
+			NSString* string = @"Errors:\n";
+			for(id key  in [json keyEnumerator]){
+				NSArray* array = [json valueForKey:key];
+				for(id phrase in array){
+					string = [string stringByAppendingString:[NSString stringWithFormat:@"%@\n", phrase]];
+				}
+			}
+			[_statusLabel setText:string];
+		}
+	}
 }
 @end
