@@ -51,14 +51,13 @@
 		[_statusLabel setText:@"Invalid Barcode"];
 	} else {
 		[_statusLabel setTextColor:[UIColor greenColor]];
-		[_statusLabel setText:@"Successfullly Scanned!"];
+		[_statusLabel setText:@"Successfully Scanned!"];
 		if([identifier isEqualToString:@"book"]) {
 			_checkOut.bookBarcode = barcode;
 			[_scanBookButton setTitle:_checkOut.bookBarcode forState:UIControlStateNormal];
 			[_scanBookButton setBackgroundColor:[UIColor greenColor]];
 		} else if([identifier isEqualToString:@"distributor"]) {
 			_checkOut.distributorBarcode = barcode;
-			if([barcode isEqualToString:@""])
 			[_scanDistributorButton setTitle:@"Distributor Scanned!" forState:UIControlStateNormal];
 			[_scanDistributorButton setBackgroundColor:[UIColor greenColor]];
 		} else if([identifier isEqualToString:@"patron"]) {
