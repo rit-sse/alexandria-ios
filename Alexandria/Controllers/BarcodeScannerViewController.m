@@ -43,7 +43,7 @@
     [self.view addSubview:_highlightView];
 	
     _session = [[AVCaptureSession alloc] init];
-    _device = [AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeVideo];
+    _device = [self frontCamera];
     NSError *error = nil;
 	
     _input = [AVCaptureDeviceInput deviceInputWithDevice:_device error:&error];
@@ -70,17 +70,12 @@
 	
     [self.view bringSubviewToFront:_highlightView];
 	[self.view bringSubviewToFront:_scanButton];
-}
-
--(void) viewDidAppear:(BOOL)animated
-{
-	[super viewDidAppear:YES];
-	
 	//Get Preview Layer connection
 	AVCaptureConnection *previewLayerConnection=_prevLayer.connection;
 	
-	if ([previewLayerConnection isVideoOrientationSupported])
-		[previewLayerConnection setVideoOrientation:[[UIApplication sharedApplication] statusBarOrientation]];
+	[previewLayerConnection setVideoOrientation:AVCaptureVideoOrientationLandscapeLeft];
+	[previewLayerConnection setAutomaticallyAdjustsVideoMirroring:NO];
+	[previewLayerConnection setVideoMirrored:NO];
 }
 
 - (AVCaptureDevice *)frontCamera {
