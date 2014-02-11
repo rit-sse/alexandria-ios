@@ -8,9 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
-@interface CheckOut : NSObject
+@interface CheckOut : NSObject <NSURLConnectionDelegate>
 @property (strong, nonatomic) NSString* bookBarcode;
 @property (strong, nonatomic) NSString* patronBarcode;
 @property (strong, nonatomic) NSString* distributorBarcode;
-
+-(NSData*) checkOutBookWithResponse:(NSURLResponse**)response error:(NSError**)error;
 @end

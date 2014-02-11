@@ -68,4 +68,12 @@
 	}
 }
 
+- (IBAction)submitCheckOut:(id)sender {
+	[_statusLabel setTextColor:[UIColor blackColor]];
+	[_statusLabel setText:@"Attempting Check Out"];
+	NSURLResponse *response = nil;
+	NSError *error = nil;
+	NSData *data = [_checkOut checkOutBookWithResponse:&response error:&error];
+	NSString *dataString = [[NSString alloc] initWithData:data encoding:NSASCIIStringEncoding];
+}
 @end

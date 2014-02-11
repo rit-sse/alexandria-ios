@@ -67,7 +67,11 @@
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
                     <navigationItem key="navigationItem" id="TYu-Vk-fa4">
-                        <barButtonItem key="rightBarButtonItem" title="Submit" id="SI5-Z2-AAS"/>
+                        <barButtonItem key="rightBarButtonItem" title="Submit" id="SI5-Z2-AAS">
+                            <connections>
+                                <action selector="submitCheckOut:" destination="op8-wF-TlV" id="NPo-yU-Wfc"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="scanBookButton" destination="aRq-Vr-wQo" id="a2b-zs-cnS"/>

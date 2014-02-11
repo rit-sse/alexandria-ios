@@ -15,4 +15,5 @@
 @property (weak, nonatomic) IBOutlet UIButton *scanDistributorButton;
 @property (strong, nonatomic) CheckOut* checkOut;
 @property (weak, nonatomic) IBOutlet UILabel *statusLabel;
+- (IBAction)submitCheckOut:(id)sender;
 @end
