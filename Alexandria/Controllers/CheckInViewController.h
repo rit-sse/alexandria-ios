@@ -9,5 +9,10 @@
 #import <UIKit/UIKit.h>
 
 @interface CheckInViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UILabel *statusLabel;
+@property (weak, nonatomic) IBOutlet UITextField *isbnField;
+@property (weak, nonatomic) IBOutlet UITextField *distributorField;
+@property (weak, nonatomic) IBOutlet UITextField *patronField;
+- (IBAction)submitCheckIn:(id)sender;
 
 @end

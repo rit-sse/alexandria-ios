@@ -23,6 +23,7 @@
 		7B5E4D5A18A84D3300A1ACF9 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7B5E4D5818A84D3300A1ACF9 /* InfoPlist.strings */; };
 		7B5E4D5C18A84D3300A1ACF9 /* AlexandriaTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B5E4D5B18A84D3300A1ACF9 /* AlexandriaTests.m */; };
 		7B5E4D6618A84D7100A1ACF9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B5E4D6518A84D7100A1ACF9 /* Main.storyboard */; };
+		7B704A6C18AB079F0078CD8F /* PutAwayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B704A6B18AB079F0078CD8F /* PutAwayViewController.m */; };
 		7BFAE6EC18A86B4500493F3D /* CheckInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BFAE6EB18A86B4500493F3D /* CheckInViewController.m */; };
 		7BFAE6F218A86BA000493F3D /* AddBookViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BFAE6F118A86BA000493F3D /* AddBookViewController.m */; };
 		7BFAE6F518A86BB800493F3D /* ViewBooksViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BFAE6F418A86BB800493F3D /* ViewBooksViewController.m */; };
@@ -63,6 +64,8 @@
 		7B5E4D5918A84D3300A1ACF9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		7B5E4D5B18A84D3300A1ACF9 /* AlexandriaTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AlexandriaTests.m; sourceTree = "<group>"; };
 		7B5E4D6518A84D7100A1ACF9 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		7B704A6A18AB079F0078CD8F /* PutAwayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PutAwayViewController.h; sourceTree = "<group>"; };
+		7B704A6B18AB079F0078CD8F /* PutAwayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PutAwayViewController.m; sourceTree = "<group>"; };
 		7BFAE6EA18A86B4500493F3D /* CheckInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CheckInViewController.h; sourceTree = "<group>"; };
 		7BFAE6EB18A86B4500493F3D /* CheckInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckInViewController.m; sourceTree = "<group>"; };
 		7BFAE6F018A86BA000493F3D /* AddBookViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddBookViewController.h; sourceTree = "<group>"; };
@@ -187,6 +190,8 @@
 				7B487C3418A8646D0001F429 /* CheckOutViewController.m */,
 				7BFAE6FA18A9220B00493F3D /* BarcodeScannerViewController.h */,
 				7BFAE6FB18A9220B00493F3D /* BarcodeScannerViewController.m */,
+				7B704A6A18AB079F0078CD8F /* PutAwayViewController.h */,
+				7B704A6B18AB079F0078CD8F /* PutAwayViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -330,6 +335,7 @@
 				7BFAE6FC18A9220B00493F3D /* BarcodeScannerViewController.m in Sources */,
 				7B5E4D4718A84D3300A1ACF9 /* AppDelegate.m in Sources */,
 				7B487C2F18A8541A0001F429 /* MainViewController.m in Sources */,
+				7B704A6C18AB079F0078CD8F /* PutAwayViewController.m in Sources */,
 				7BFAE6F218A86BA000493F3D /* AddBookViewController.m in Sources */,
 				7B5E4D4318A84D3300A1ACF9 /* main.m in Sources */,
 				7BFAE6F518A86BB800493F3D /* ViewBooksViewController.m in Sources */,
