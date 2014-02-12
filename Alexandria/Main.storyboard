@@ -4,7 +4,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
     </dependencies>
     <scenes>
-        <!--Check Out View Controller-->
+        <!--Check Out View Controller - Check Out-->
         <scene sceneID="meT-bB-HXt">
             <objects>
                 <viewController id="op8-wF-TlV" customClass="CheckOutViewController" sceneMemberID="viewController">
@@ -105,7 +105,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
-                    <navigationItem key="navigationItem" id="TYu-Vk-fa4">
+                    <navigationItem key="navigationItem" title="Check Out" id="TYu-Vk-fa4">
                         <barButtonItem key="rightBarButtonItem" title="Submit" id="SI5-Z2-AAS">
                             <connections>
                                 <action selector="submitCheckOut:" destination="op8-wF-TlV" id="NPo-yU-Wfc"/>
@@ -180,7 +180,7 @@
             </objects>
             <point key="canvasLocation" x="1570" y="-470"/>
         </scene>
-        <!--Check In View Controller-->
+        <!--Check In View Controller - Check In-->
         <scene sceneID="GhS-Px-obJ">
             <objects>
                 <viewController id="xTg-pB-0d9" customClass="CheckInViewController" sceneMemberID="viewController">
@@ -281,7 +281,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
-                    <navigationItem key="navigationItem" id="lLj-uK-pKd">
+                    <navigationItem key="navigationItem" title="Check In" id="lLj-uK-pKd">
                         <barButtonItem key="rightBarButtonItem" title="Submit" id="hAq-k6-3YA">
                             <connections>
                                 <action selector="submitCheckIn:" destination="xTg-pB-0d9" id="5Bz-un-Tyb"/>
@@ -447,6 +447,6 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="Wc2-aw-boX"/>
+        <segue reference="gZR-28-EnC"/>
     </inferredMetricsTieBreakers>
 </document>
