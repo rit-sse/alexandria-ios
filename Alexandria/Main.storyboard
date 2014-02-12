@@ -235,6 +235,15 @@
                     </view>
                     <navigationItem key="navigationItem" title="Want to put this book away?" id="JkG-Bz-Wcm"/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    <connections>
+                        <outlet property="leftImage" destination="XyL-kN-Rvo" id="DZZ-sn-ky5"/>
+                        <outlet property="leftLcc" destination="RYl-BR-b2d" id="Zaf-pr-BDZ"/>
+                        <outlet property="leftTitle" destination="Ba6-XB-YQu" id="Omi-AA-tl5"/>
+                        <outlet property="rightImage" destination="52E-Zy-XWY" id="tnl-ch-7cO"/>
+                        <outlet property="rightLcc" destination="c0z-Ek-kFV" id="l8N-lB-sl3"/>
+                        <outlet property="rightTitle" destination="JXs-pc-DBn" id="z7T-ry-KeZ"/>
+                        <outlet property="shelf" destination="7mP-V1-CIV" id="99O-uq-ITz"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="74k-jd-q2l" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
