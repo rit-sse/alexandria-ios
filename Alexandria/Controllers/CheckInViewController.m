@@ -99,18 +99,13 @@
 		NSInteger status = [(NSHTTPURLResponse*)response statusCode];
 		if(status == 200){
 			UIStoryboard*  sb = self.storyboard;
-			PutAway* putAway = [[PutAway alloc]init];
-			putAway.shelf = [[json valueForKey:@"shelf"]valueForKey:@"number"];
+			NSString* shelf = [[json valueForKey:@"shelf"]valueForKey:@"Number"];
 			NSDictionary *left = [json valueForKey:@"left"];
 			NSDictionary *right = [json	valueForKey:@"right"];
-			putAway.leftImageUrl = [left valueForKey:@"image"];
-			putAway.leftTitle = [left valueForKey:@"title"];
-			putAway.leftLCC = [left valueForKey:@"lcc"];
-			putAway.rightImageUrl = [right valueForKey:@"image"];
-			putAway.rightTitle = [right valueForKey:@"title"];
-			putAway.rightLCC = [right valueForKey:@"lcc"];
 			PutAwayViewController *viewController = [sb instantiateViewControllerWithIdentifier:@"PutAwayViewController"];
-			viewController.putAway = putAway;
+			viewController.shelfNumber = shelf;
+			viewController.left = left;
+			viewController.right = right;
 			[self.navigationController pushViewController:viewController animated:YES];
 		}else {
 			[_statusLabel setTextColor:[UIColor grapefruitColor]];

@@ -26,25 +26,25 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	NSData *leftImageData = [NSData dataWithContentsOfURL:[NSURL URLWithString:_putAway.leftImageUrl]];
+	NSData *leftImageData = [NSData dataWithContentsOfURL:[NSURL URLWithString:[_left valueForKey:@"image"]]];
 	_leftImage.image = [UIImage imageWithData:leftImageData];
-	NSData *rightImageData = [NSData dataWithContentsOfURL:[NSURL URLWithString:_putAway.rightImageUrl]];
+	NSData *rightImageData = [NSData dataWithContentsOfURL:[NSURL URLWithString:[_right valueForKey:@"image"]]];
 	_rightImage.image = [UIImage imageWithData:rightImageData];
-	if([_putAway.leftTitle isEqualToString:@""]) {
+	if([[_left valueForKey:@"title"] isEqualToString:@""]) {
 		_leftTitle.text = @"This book is";
 		_leftLcc.text = @"the first on the shelf";
 	} else {
-		_leftTitle.text = _putAway.leftTitle;
-		_leftLcc.text = _putAway.leftLCC;
+		_leftTitle.text = [_left valueForKey:@"title"];
+		_leftLcc.text = [_left valueForKey:@"lcc"];
 	}
-	if([_putAway.rightTitle isEqualToString:@""]) {
+	if([[_right valueForKey:@"title"] isEqualToString:@""]) {
 		_rightTitle.text = @"This book is";
 		_rightLcc.text = @"the last on the shelf";
 	} else {
-		_rightTitle.text = _putAway.rightTitle;
-		_rightLcc.text = _putAway.rightLCC;
+		_rightTitle.text = [_right valueForKey:@"title"];
+		_rightLcc.text = [_right valueForKey:@"lcc"];
 	}
-	_shelf.text = [NSString stringWithFormat:@"Shelf: %@",_putAway.shelf];
+	_shelf.text = [NSString stringWithFormat:@"Shelf: %@",_shelfNumber];
 }
 
 - (void)didReceiveMemoryWarning

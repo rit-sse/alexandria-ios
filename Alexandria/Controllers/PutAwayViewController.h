@@ -19,5 +19,7 @@
 @property (weak, nonatomic) IBOutlet UIImageView *rightImage;
 @property (weak, nonatomic) IBOutlet UILabel *rightTitle;
 @property (weak, nonatomic) IBOutlet UILabel *rightLcc;
-@property (strong, nonatomic) PutAway* putAway;
+@property (strong, nonatomic) NSDictionary *left;
+@property (strong, nonatomic) NSDictionary *right;
+@property (strong, nonatomic) NSString *shelfNumber;
 @end
