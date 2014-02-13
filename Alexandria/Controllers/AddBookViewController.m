@@ -35,4 +35,6 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)submitAddBook:(id)sender {
+}
 @end

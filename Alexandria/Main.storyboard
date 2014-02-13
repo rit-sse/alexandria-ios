@@ -499,7 +499,17 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Add Book" id="EQh-AO-uzm"/>
+                    <navigationItem key="navigationItem" title="Add Book" id="EQh-AO-uzm">
+                        <barButtonItem key="rightBarButtonItem" title="Submit" id="gOp-rh-NGw">
+                            <connections>
+                                <action selector="submitAddBook:" destination="VXg-vs-oY4" id="0gi-bf-R7t"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="isbnField" destination="iYs-Jn-B3N" id="863-Ax-bPE"/>
+                        <outlet property="librarianField" destination="ZRl-Yx-Vjw" id="Ixw-2u-uId"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3S8-ll-6rC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -9,5 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface AddBookViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UITextField *isbnField;
+@property (weak, nonatomic) IBOutlet UITextField *librarianField;
+- (IBAction)submitAddBook:(id)sender;
+
 
 @end
