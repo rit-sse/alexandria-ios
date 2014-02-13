@@ -61,7 +61,7 @@
 
 - (IBAction)submitAddBook:(id)sender {
 	[_statusLabel setTextColor:[UIColor blackColor]];
-	[_statusLabel setText:@"Attempting Check Out..."];
+	[_statusLabel setText:@"Attempting to Add Book..."];
 	NSURLResponse *response = nil;
 	NSError *error = nil;
 	
