@@ -45,6 +45,16 @@
 		_rightLcc.text = [_right valueForKey:@"lcc"];
 	}
 	_shelf.text = [NSString stringWithFormat:@"Shelf: %@",_shelfNumber];
+	CGSize leftTitleSize = [_leftTitle.text sizeWithAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:17]}];
+	CGSize leftLccSize = [_leftLcc.text sizeWithAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:17]}];
+	CGSize rightTitleSize = [_rightTitle.text sizeWithAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:17]}];
+	CGSize rightLccSize = [_rightLcc.text sizeWithAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:17]}];
+	CGSize shelfSize = [_shelf.text sizeWithAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:17]}];
+	[_leftTitle sizeThatFits:leftTitleSize];
+	[_leftLcc sizeThatFits:leftLccSize];
+	[_rightTitle sizeThatFits:rightTitleSize];
+	[_rightLcc sizeThatFits:rightLccSize];
+	[_shelf sizeThatFits:shelfSize];
 }
 
 - (void)didReceiveMemoryWarning

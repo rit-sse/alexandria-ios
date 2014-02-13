@@ -99,7 +99,7 @@
 		NSInteger status = [(NSHTTPURLResponse*)response statusCode];
 		if(status == 200){
 			UIStoryboard*  sb = self.storyboard;
-			NSString* shelf = [[json valueForKey:@"shelf"]valueForKey:@"Number"];
+			NSString* shelf = [[json valueForKey:@"shelf"]valueForKey:@"number"];
 			NSDictionary *left = [json valueForKey:@"left"];
 			NSDictionary *right = [json	valueForKey:@"right"];
 			PutAwayViewController *viewController = [sb instantiateViewControllerWithIdentifier:@"PutAwayViewController"];
@@ -107,6 +107,7 @@
 			viewController.left = left;
 			viewController.right = right;
 			[self.navigationController pushViewController:viewController animated:YES];
+			[_statusLabel setText:@""];
 		}else {
 			[_statusLabel setTextColor:[UIColor grapefruitColor]];
 			NSString* string = @"Errors:\n";

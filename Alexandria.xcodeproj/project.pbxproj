@@ -24,7 +24,6 @@
 		7B5E4D5C18A84D3300A1ACF9 /* AlexandriaTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B5E4D5B18A84D3300A1ACF9 /* AlexandriaTests.m */; };
 		7B5E4D6618A84D7100A1ACF9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B5E4D6518A84D7100A1ACF9 /* Main.storyboard */; };
 		7B704A6C18AB079F0078CD8F /* PutAwayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B704A6B18AB079F0078CD8F /* PutAwayViewController.m */; };
-		7B704A7418AB13080078CD8F /* PutAway.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B704A7318AB13080078CD8F /* PutAway.m */; };
 		7BFAE6EC18A86B4500493F3D /* CheckInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BFAE6EB18A86B4500493F3D /* CheckInViewController.m */; };
 		7BFAE6F218A86BA000493F3D /* AddBookViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BFAE6F118A86BA000493F3D /* AddBookViewController.m */; };
 		7BFAE6F518A86BB800493F3D /* ViewBooksViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BFAE6F418A86BB800493F3D /* ViewBooksViewController.m */; };
@@ -67,8 +66,6 @@
 		7B5E4D6518A84D7100A1ACF9 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		7B704A6A18AB079F0078CD8F /* PutAwayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PutAwayViewController.h; sourceTree = "<group>"; };
 		7B704A6B18AB079F0078CD8F /* PutAwayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PutAwayViewController.m; sourceTree = "<group>"; };
-		7B704A7218AB13080078CD8F /* PutAway.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PutAway.h; sourceTree = "<group>"; };
-		7B704A7318AB13080078CD8F /* PutAway.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PutAway.m; sourceTree = "<group>"; };
 		7BFAE6EA18A86B4500493F3D /* CheckInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CheckInViewController.h; sourceTree = "<group>"; };
 		7BFAE6EB18A86B4500493F3D /* CheckInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckInViewController.m; sourceTree = "<group>"; };
 		7BFAE6F018A86BA000493F3D /* AddBookViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddBookViewController.h; sourceTree = "<group>"; };
@@ -138,7 +135,6 @@
 		7B5E4D3C18A84D3300A1ACF9 /* Alexandria */ = {
 			isa = PBXGroup;
 			children = (
-				7B704A7118AB12EA0078CD8F /* Models */,
 				7BFAE6F918A921B600493F3D /* Controllers */,
 				7B5E4D4518A84D3300A1ACF9 /* AppDelegate.h */,
 				7B5E4D4618A84D3300A1ACF9 /* AppDelegate.m */,
@@ -177,15 +173,6 @@
 				7B5E4D5818A84D3300A1ACF9 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		7B704A7118AB12EA0078CD8F /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				7B704A7218AB13080078CD8F /* PutAway.h */,
-				7B704A7318AB13080078CD8F /* PutAway.m */,
-			);
-			path = Models;
 			sourceTree = "<group>";
 		};
 		7BFAE6F918A921B600493F3D /* Controllers */ = {
@@ -346,7 +333,6 @@
 				7B487C3518A8646D0001F429 /* CheckOutViewController.m in Sources */,
 				7BFAE6EC18A86B4500493F3D /* CheckInViewController.m in Sources */,
 				7BFAE6FC18A9220B00493F3D /* BarcodeScannerViewController.m in Sources */,
-				7B704A7418AB13080078CD8F /* PutAway.m in Sources */,
 				7B5E4D4718A84D3300A1ACF9 /* AppDelegate.m in Sources */,
 				7B487C2F18A8541A0001F429 /* MainViewController.m in Sources */,
 				7B704A6C18AB079F0078CD8F /* PutAwayViewController.m in Sources */,

@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "PutAway.h"
 
 @interface PutAwayViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UILabel *shelf;
