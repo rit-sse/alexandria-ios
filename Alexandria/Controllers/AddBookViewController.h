@@ -11,6 +11,7 @@
 @interface AddBookViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UITextField *isbnField;
 @property (weak, nonatomic) IBOutlet UITextField *librarianField;
+@property (weak, nonatomic) IBOutlet UILabel *statusLabel;
 - (IBAction)submitAddBook:(id)sender;
 
 

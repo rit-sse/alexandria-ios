@@ -509,6 +509,7 @@
                     <connections>
                         <outlet property="isbnField" destination="iYs-Jn-B3N" id="863-Ax-bPE"/>
                         <outlet property="librarianField" destination="ZRl-Yx-Vjw" id="Ixw-2u-uId"/>
+                        <outlet property="statusLabel" destination="15I-fc-Bg5" id="9aQ-9T-gzJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3S8-ll-6rC" userLabel="First Responder" sceneMemberID="firstResponder"/>
