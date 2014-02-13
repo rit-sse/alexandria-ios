@@ -247,7 +247,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="74k-jd-q2l" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1570" y="-1425"/>
+            <point key="canvasLocation" x="1534" y="-1425"/>
         </scene>
         <!--Barcode Scanner View Controller-->
         <scene sceneID="7k6-nR-4Vw">
@@ -283,7 +283,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zqr-TO-ZrL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1570" y="-470"/>
+            <point key="canvasLocation" x="1534" y="-470"/>
         </scene>
         <!--Check In View Controller - Check In-->
         <scene sceneID="GhS-Px-obJ">
@@ -452,6 +452,9 @@
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="6Wx-Hx-rZk" kind="push" identifier="librarian" id="4lC-Ms-NcM"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dzR-OJ-xil">
                                 <rect key="frame" x="20" y="629" width="488" height="119"/>
@@ -462,6 +465,9 @@
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="6Wx-Hx-rZk" kind="push" identifier="book" id="VKc-R4-tvY"/>
+                                </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ISBN:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n6N-Y8-2bA">
                                 <rect key="frame" x="347" y="293" width="64" height="35"/>
@@ -607,6 +613,6 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="gZR-28-EnC"/>
+        <segue reference="VKc-R4-tvY"/>
     </inferredMetricsTieBreakers>
 </document>
