@@ -446,7 +446,7 @@
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="394" translatesAutoresizingMaskIntoConstraints="NO" id="N7j-Aa-moF">
                                 <rect key="frame" x="610" y="84" width="394" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Subtitle" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="394" translatesAutoresizingMaskIntoConstraints="NO" id="0gS-h8-gyY">
@@ -462,7 +462,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ISBN" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XpD-qp-xpl">
-                                <rect key="frame" x="610" y="171" width="40" height="21"/>
+                                <rect key="frame" x="610" y="171" width="394" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
@@ -484,8 +484,15 @@
                     </view>
                     <navigationItem key="navigationItem" title="View Books" id="8FU-jI-htM"/>
                     <connections>
+                        <outlet property="authors" destination="nSW-cL-PTI" id="ejs-gr-b94"/>
                         <outlet property="bookList" destination="FZa-kJ-aJ9" id="HnH-OR-j3y"/>
+                        <outlet property="bookTitle" destination="N7j-Aa-moF" id="nY9-I0-0S2"/>
+                        <outlet property="cover" destination="86z-iT-PQL" id="QHm-hM-iJW"/>
+                        <outlet property="description" destination="gDc-ya-qcB" id="9pb-JM-3TT"/>
+                        <outlet property="isbn" destination="XpD-qp-xpl" id="vUC-dQ-7pc"/>
+                        <outlet property="lcc" destination="sgG-kI-X6F" id="d3H-AW-Ux1"/>
                         <outlet property="searchDisplayController" destination="Jiu-9Q-zNs" id="fBO-Jq-yjB"/>
+                        <outlet property="subtitle" destination="0gS-h8-gyY" id="b6J-KQ-CGL"/>
                         <outlet property="tableView" destination="FZa-kJ-aJ9" id="y82-lA-ATj"/>
                     </connections>
                 </viewController>

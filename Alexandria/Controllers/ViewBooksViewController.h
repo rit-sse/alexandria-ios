@@ -11,5 +11,12 @@
 @interface ViewBooksViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *bookList;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (weak, nonatomic) IBOutlet UITextView *description;
+@property (weak, nonatomic) IBOutlet UILabel *bookTitle;
+@property (weak, nonatomic) IBOutlet UILabel *subtitle;
+@property (weak, nonatomic) IBOutlet UILabel *authors;
+@property (weak, nonatomic) IBOutlet UILabel *isbn;
+@property (weak, nonatomic) IBOutlet UILabel *lcc;
+@property (weak, nonatomic) IBOutlet UIImageView *cover;
 @property (strong, nonatomic) NSArray *books;
 @end

@@ -47,6 +47,12 @@
 															options: NSJSONReadingMutableContainers
 															  error: &e];
 	}
+	[_bookTitle setText:@""];
+	[_subtitle setText:@""];
+	[_authors setText:@""];
+	[_isbn setText:@""];
+	[_lcc setText:@""];
+	[_description setText:@""];
 	_tableView.delegate = self;
     _tableView.dataSource = self;
 	[_tableView reloadData];
@@ -77,6 +83,25 @@
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     return _books.count;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSDictionary *book = _books[indexPath.row];
+	NSString *authors = @"";
+	for(id author in [book valueForKey:@"authors"]){
+		authors = [authors stringByAppendingString:[NSString stringWithFormat:@"%@, ",[author valueForKey:@"full_name"]]];
+	}
+	authors = [authors stringByTrimmingCharactersInSet: [NSCharacterSet characterSetWithCharactersInString:@" ,"]];
+	[_bookTitle setText:[book valueForKey:@"title"]];
+	[_subtitle setText:[book valueForKey:@"subtitle"]];
+	[_authors setText:authors];
+	[_isbn setText:[book valueForKey:@"isbn"]];
+	[_lcc setText:[book valueForKey:@"lcc"]];
+	[_description setText:[[book valueForKey:@"google_book"] valueForKey:@"description"]];
+	NSData *imageData = [NSData dataWithContentsOfURL:[NSURL URLWithString:[[_books[indexPath.row] valueForKey:@"google_book"] valueForKey:@"img_small"]]];
+	_cover.image = [UIImage imageWithData:imageData];
+    
 }
 
 @end
