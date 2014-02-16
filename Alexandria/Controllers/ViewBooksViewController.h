@@ -19,5 +19,5 @@
 @property (weak, nonatomic) IBOutlet UILabel *lcc;
 @property (weak, nonatomic) IBOutlet UIImageView *cover;
 @property (weak, nonatomic) IBOutlet UILabel *publishDate;
-@property (strong, nonatomic) NSArray *books;
+@property (strong, nonatomic) NSMutableArray *books;
 @end

@@ -7,9 +7,11 @@
 //
 
 #import "ViewBooksViewController.h"
+#import "Book.h"
+#import "ImageDownloader.h"
 
 @interface ViewBooksViewController ()
-
+@property (nonatomic, strong) NSMutableDictionary *imageDownloadsInProgress;
 @end
 
 @implementation ViewBooksViewController
@@ -43,9 +45,31 @@
 	NSString *dataString = [[NSString alloc] initWithData:responseData encoding:NSASCIIStringEncoding];
 	if (error == nil){
 		NSError *e;
-		_books =[NSJSONSerialization JSONObjectWithData: [dataString dataUsingEncoding:NSUTF8StringEncoding]
+		NSArray *books =[NSJSONSerialization JSONObjectWithData: [dataString dataUsingEncoding:NSUTF8StringEncoding]
 															options: NSJSONReadingMutableContainers
 															  error: &e];
+		_books = [[NSMutableArray alloc]init];
+		for(id book in books){
+			Book *bookObject = [[Book alloc]init];
+			NSString *authors = @"";
+			for(id author in [book valueForKey:@"authors"]){
+				authors = [authors stringByAppendingString:[NSString stringWithFormat:@"%@, ",[author valueForKey:@"full_name"]]];
+			}
+			authors = [authors stringByTrimmingCharactersInSet: [NSCharacterSet characterSetWithCharactersInString:@" ,"]];
+			bookObject.authors = authors;
+			bookObject.title = [book valueForKey:@"title"];
+			bookObject.subtitle = [book valueForKey:@"subtitle"];
+			bookObject.isbn = [book valueForKey:@"isbn"];
+			bookObject.lcc = [book valueForKey:@"lcc"];
+			bookObject.description = [[book valueForKey:@"google_book"] valueForKey:@"description"];
+			bookObject.smallUrl = [[book valueForKey:@"google_book"] valueForKey:@"img_small"];
+			bookObject.thumbnailUrl = [[book valueForKey:@"google_book"] valueForKey:@"img_thumbnail"];
+			bookObject.publishDate = [book valueForKey:@"publish_date"];
+			if (bookObject.publishDate == (id)[NSNull null]){
+				bookObject.publishDate = @"";
+			}
+			[_books addObject:bookObject];
+		}
 	}
 	[_bookTitle setText:@""];
 	[_subtitle setText:@""];
@@ -53,6 +77,7 @@
 	[_isbn setText:@""];
 	[_lcc setText:@""];
 	[_description setText:@""];
+	[_publishDate setText:@""];
 	_tableView.delegate = self;
     _tableView.dataSource = self;
 	[_tableView reloadData];
@@ -71,14 +96,22 @@
     if (cell == nil) {
 		cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
     }
-	
-	[cell.textLabel setText:[_books[indexPath.row] valueForKey:@"title"]];
-	[cell.detailTextLabel setText:[_books[indexPath.row] valueForKey:@"subtitle"]];
-	NSData *imageData = [NSData dataWithContentsOfURL:[NSURL URLWithString:[[_books[indexPath.row] valueForKey:@"google_book"] valueForKey:@"img_thumbnail"]]];
-	cell.imageView.image = [UIImage imageWithData:imageData];
+	Book* book = _books[indexPath.row];
+	[cell.textLabel setText:book.title];
+	[cell.detailTextLabel setText:book.subtitle];
+	if(!book.thumbnail) {
+		if (self.tableView.dragging == NO && self.tableView.decelerating == NO) {
+			[self startImageDownload:book forIndexPath:indexPath];
+		}
+		// if a download is deferred or in progress, return a placeholder image
+		cell.imageView.image = [UIImage imageNamed:@"Placeholder.png"];
+	} else {
+		cell.imageView.image = book.thumbnail;
+	}
 	
     return cell;
 }
+
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
@@ -87,21 +120,76 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSDictionary *book = _books[indexPath.row];
-	NSString *authors = @"";
-	for(id author in [book valueForKey:@"authors"]){
-		authors = [authors stringByAppendingString:[NSString stringWithFormat:@"%@, ",[author valueForKey:@"full_name"]]];
-	}
-	authors = [authors stringByTrimmingCharactersInSet: [NSCharacterSet characterSetWithCharactersInString:@" ,"]];
-	[_bookTitle setText:[book valueForKey:@"title"]];
-	[_subtitle setText:[book valueForKey:@"subtitle"]];
-	[_authors setText:authors];
-	[_isbn setText:[book valueForKey:@"isbn"]];
-	[_lcc setText:[book valueForKey:@"lcc"]];
-	[_description setText:[[book valueForKey:@"google_book"] valueForKey:@"description"]];
-	NSData *imageData = [NSData dataWithContentsOfURL:[NSURL URLWithString:[[_books[indexPath.row] valueForKey:@"google_book"] valueForKey:@"img_small"]]];
+    Book *book = _books[indexPath.row];
+	[_bookTitle setText:book.title];
+	[_subtitle setText:book.subtitle];
+	[_authors setText:book.authors];
+	[_isbn setText:book.isbn];
+	[_lcc setText:book.lcc];
+	[_publishDate setText:book.publishDate];
+	[_description setText:book.description];
+	NSData *imageData = [NSData dataWithContentsOfURL:[NSURL URLWithString:book.smallUrl]];
 	_cover.image = [UIImage imageWithData:imageData];
     
 }
+
+- (void)startImageDownload:(Book *)book forIndexPath:(NSIndexPath *)indexPath
+{
+    ImageDownloader *imageDownloader = [self.imageDownloadsInProgress objectForKey:indexPath];
+    if (imageDownloader == nil) {
+        imageDownloader = [[ImageDownloader alloc] init];
+        imageDownloader.book = book;
+        [imageDownloader setCompletionHandler:^{
+            
+            UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
+            
+            // Display the newly loaded image
+            cell.imageView.image = book.thumbnail;
+            
+            // Remove the IconDownloader from the in progress list.
+            // This will result in it being deallocated.
+            [self.imageDownloadsInProgress removeObjectForKey:indexPath];
+            
+        }];
+        [self.imageDownloadsInProgress setObject:imageDownloader forKey:indexPath];
+        [imageDownloader startDownload];
+    }
+}
+
+// -------------------------------------------------------------------------------
+- (void)loadImagesForOnscreenRows
+{
+
+	NSArray *visiblePaths = [self.tableView indexPathsForVisibleRows];
+	for (NSIndexPath *indexPath in visiblePaths) {
+		Book *book = [_books objectAtIndex:indexPath.row];
+		
+		if (!book.thumbnail) {
+			[self startImageDownload:book forIndexPath:indexPath];
+		}
+	}
+}
+
+#pragma mark - UIScrollViewDelegate
+
+// -------------------------------------------------------------------------------
+//	scrollViewDidEndDragging:willDecelerate:
+//  Load images for all onscreen rows when scrolling is finished.
+// -------------------------------------------------------------------------------
+- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
+{
+    if (!decelerate) {
+        [self loadImagesForOnscreenRows];
+    }
+}
+
+// -------------------------------------------------------------------------------
+//	scrollViewDidEndDecelerating:
+// -------------------------------------------------------------------------------
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
+{
+    [self loadImagesForOnscreenRows];
+}
+
 
 @end

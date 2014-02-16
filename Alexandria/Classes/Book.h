@@ -15,7 +15,7 @@
 @property (strong, nonatomic) NSString *description;
 @property (strong, nonatomic) NSString *isbn;
 @property (strong, nonatomic) NSString *lcc;
-@property (strong, nonatomic) NSDate *publishDate;
+@property (strong, nonatomic) NSString *publishDate;
 @property (strong, nonatomic) NSString *thumbnailUrl;
 @property (strong, nonatomic) NSString *smallUrl;
 @property (strong, nonatomic) UIImage *thumbnail;
