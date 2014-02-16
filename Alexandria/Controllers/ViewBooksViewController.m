@@ -48,28 +48,7 @@
 		NSArray *books =[NSJSONSerialization JSONObjectWithData: [dataString dataUsingEncoding:NSUTF8StringEncoding]
 															options: NSJSONReadingMutableContainers
 															  error: &e];
-		_books = [[NSMutableArray alloc]init];
-		for(id book in books){
-			Book *bookObject = [[Book alloc]init];
-			NSString *authors = @"";
-			for(id author in [book valueForKey:@"authors"]){
-				authors = [authors stringByAppendingString:[NSString stringWithFormat:@"%@, ",[author valueForKey:@"full_name"]]];
-			}
-			authors = [authors stringByTrimmingCharactersInSet: [NSCharacterSet characterSetWithCharactersInString:@" ,"]];
-			bookObject.authors = authors;
-			bookObject.title = [book valueForKey:@"title"];
-			bookObject.subtitle = [book valueForKey:@"subtitle"];
-			bookObject.isbn = [book valueForKey:@"isbn"];
-			bookObject.lcc = [book valueForKey:@"lcc"];
-			bookObject.description = [[book valueForKey:@"google_book"] valueForKey:@"description"];
-			bookObject.smallUrl = [[book valueForKey:@"google_book"] valueForKey:@"img_small"];
-			bookObject.thumbnailUrl = [[book valueForKey:@"google_book"] valueForKey:@"img_thumbnail"];
-			bookObject.publishDate = [book valueForKey:@"publish_date"];
-			if (bookObject.publishDate == (id)[NSNull null]){
-				bookObject.publishDate = @"";
-			}
-			[_books addObject:bookObject];
-		}
+		[self populateBookArrayFromBooks:books];
 	}
 	[_bookTitle setText:@""];
 	[_subtitle setText:@""];
@@ -80,6 +59,7 @@
 	[_publishDate setText:@""];
 	_tableView.delegate = self;
     _tableView.dataSource = self;
+	_searchBar.delegate = self;
 	[_tableView reloadData];
 }
 
@@ -88,6 +68,33 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+- (void)populateBookArrayFromBooks:(NSArray*) books{
+	_books = [[NSMutableArray alloc]init];
+	for(id book in books){
+		Book *bookObject = [[Book alloc]init];
+		NSString *authors = @"";
+		for(id author in [book valueForKey:@"authors"]){
+			authors = [authors stringByAppendingString:[NSString stringWithFormat:@"%@, ",[author valueForKey:@"full_name"]]];
+		}
+		authors = [authors stringByTrimmingCharactersInSet: [NSCharacterSet characterSetWithCharactersInString:@" ,"]];
+		bookObject.authors = authors;
+		bookObject.title = [book valueForKey:@"title"];
+		bookObject.subtitle = [book valueForKey:@"subtitle"];
+		bookObject.isbn = [book valueForKey:@"isbn"];
+		bookObject.lcc = [book valueForKey:@"lcc"];
+		bookObject.description = [[book valueForKey:@"google_book"] valueForKey:@"description"];
+		bookObject.smallUrl = [[book valueForKey:@"google_book"] valueForKey:@"img_small"];
+		bookObject.thumbnailUrl = [[book valueForKey:@"google_book"] valueForKey:@"img_thumbnail"];
+		bookObject.publishDate = [book valueForKey:@"publish_date"];
+		if (bookObject.publishDate == (id)[NSNull null]){
+			bookObject.publishDate = @"";
+		}
+		[_books addObject:bookObject];
+	}
+}
+
+#pragma mark - UITableViewDataSource
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -189,6 +196,38 @@
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
 {
     [self loadImagesForOnscreenRows];
+}
+
+#pragma mark - UISearchBarDelegate
+
+- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
+    [self handleSearch:searchBar];
+}
+
+- (void)handleSearch:(UISearchBar *)searchBar {
+	NSURLResponse *response = nil;
+	NSError *error = nil;
+    NSURL *URL = [NSURL URLWithString:[NSString stringWithFormat:@"http://alexandria.ad.sofse.org:8080/books.json?search=%@", searchBar.text]];
+	NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:URL];
+	// Set request type
+	request.HTTPMethod = @"GET";
+	
+	// Add values and contenttype to the http header
+	[request addValue:@"8bit" forHTTPHeaderField:@"Content-Transfer-Encoding"];
+	[request addValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
+	
+	NSData *responseData = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
+	
+	NSString *dataString = [[NSString alloc] initWithData:responseData encoding:NSASCIIStringEncoding];
+	if (error == nil){
+		NSError *e;
+		NSArray *books =[NSJSONSerialization JSONObjectWithData: [dataString dataUsingEncoding:NSUTF8StringEncoding]
+														options: NSJSONReadingMutableContainers
+														  error: &e];
+		[self populateBookArrayFromBooks:books];
+	}
+    [searchBar resignFirstResponder]; // if you want the keyboard to go away
+	[_tableView reloadData];
 }
 
 

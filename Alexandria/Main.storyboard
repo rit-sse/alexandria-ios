@@ -498,6 +498,7 @@
                         <outlet property="isbn" destination="XpD-qp-xpl" id="vUC-dQ-7pc"/>
                         <outlet property="lcc" destination="sgG-kI-X6F" id="d3H-AW-Ux1"/>
                         <outlet property="publishDate" destination="SdL-rH-KrT" id="2f1-uE-rmq"/>
+                        <outlet property="searchBar" destination="sfs-0v-tZD" id="Enf-8G-8u3"/>
                         <outlet property="searchDisplayController" destination="Jiu-9Q-zNs" id="fBO-Jq-yjB"/>
                         <outlet property="subtitle" destination="0gS-h8-gyY" id="b6J-KQ-CGL"/>
                         <outlet property="tableView" destination="FZa-kJ-aJ9" id="y82-lA-ATj"/>
