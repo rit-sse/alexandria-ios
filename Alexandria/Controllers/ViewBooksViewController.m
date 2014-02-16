@@ -60,6 +60,17 @@
 	_tableView.delegate = self;
     _tableView.dataSource = self;
 	_searchBar.delegate = self;
+	UITextField *searchBarTextField;
+	for (UIView *subView in _searchBar.subviews){
+		for (UIView *anotherSubView in subView.subviews){
+			if ([anotherSubView isKindOfClass:[UITextField class]])
+			{
+				searchBarTextField = (UITextField *)anotherSubView;
+				break;
+			}
+		}
+	}
+	searchBarTextField.enablesReturnKeyAutomatically = NO;
 	[_tableView reloadData];
 }
 
